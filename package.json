@@ -12,11 +12,11 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "build"
+      "pre-push": "npm run build && git add . && git commit --amend"
     }
   },
   "lint-staged": {
-    "*.(js|jsx)": ["npm run lint:write", "git add"]
+    "*.(js|jsx)": ["npm run lint:fix", "git add"]
   },
   "author": "",
   "license": "ISC",
