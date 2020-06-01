@@ -1,0 +1,14 @@
+.layout {
+    width: 712px;
+    margin: 0 auto;
+
+    &-header {
+        display: flex;
+        align-items: center;
+    }
+
+    &-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}

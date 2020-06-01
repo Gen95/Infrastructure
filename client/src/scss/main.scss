@@ -1,0 +1,42 @@
+@import '../components/input/input.scss';
+@import '../components/header/header.scss';
+@import '../components/footer/footer.scss';
+@import '../components/layout/layout.scss';
+@import '../components/button/button.scss';
+@import '../components/form/form.scss';
+@import '../components/navigation/navigation.scss';
+@import '../components/reviews/reviews.scss';
+@import '../components/reviews-input/reviews-input.scss';
+@import '../components/review/review.scss';
+@import '../components/rating/rating.scss';
+
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 36px;
+    color: #242424;
+}
+
+.h1 {
+    font-size: 36px;
+    line-height: 36px;
+}
+
+.h2 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.main {
+    height: 100%;
+    flex: 1 0 auto;
+    background-image: url(./../img/bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}

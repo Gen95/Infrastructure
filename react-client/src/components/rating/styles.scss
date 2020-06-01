@@ -1,0 +1,23 @@
+.rating {
+    display: flex;
+  }
+  
+  .star {
+    width: 17px;
+    height: 16px;
+    margin-right: 8px;
+    cursor: pointer;
+    background-image: url(../../img/star_full.png);
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+  
+  .active {
+    background-image: url(../../img/star_full.png);
+  }
+  
+  .active ~ .star {
+    background-image: url(../../img/star_empty.png);
+  }

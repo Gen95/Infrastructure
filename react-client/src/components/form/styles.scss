@@ -1,0 +1,24 @@
+.form {
+
+    &_reviews {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+    }
+
+    &_valid {
+
+        & .input__control {
+            border-color: var(--valid-color);
+        }
+
+        & .input__label {
+            color: var(--valid-color);
+        }
+
+        & .button {
+            background-color: var(--valid-color);
+        }
+
+    }
+}

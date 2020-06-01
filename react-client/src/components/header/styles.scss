@@ -1,0 +1,16 @@
+.header {
+    background-color: var(--header-bg-color);
+    border-bottom: 3px solid var(--header-border);
+
+    &__logo {
+        width: 67px;
+        height: 36px;
+        background-image: url(../../img/logo.png);
+        background-repeat: no-repeat;
+    }
+
+    &__nav {
+        padding: 10px 0;
+    }
+
+}
