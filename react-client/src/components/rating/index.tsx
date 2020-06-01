@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { MouseEvent } from 'react';
 
 import './styles.scss'
 
@@ -6,23 +7,13 @@ type RatingProps = {
     rating: number
 }
 
-function setRating(event: any) { //FIXME
-    const stars = event.target.parentNode.childNodes;
-    for (const star of stars) {
-        star.className = "star"; //FIXME
-    }
-    event.target.className = "star active";
-}
+export const Rating = ({ rating: propsRating }: RatingProps) => {
+    const [rating, setRating] = useState<number>(propsRating);
 
-export const Rating = ({ rating }: RatingProps) => {
     return (
-        <div className="rating" onClick={setRating}>
+        <div className="rating">
             {[0, 0, 0, 0, 0].map((_, index) => {
-                if ((index + 1) === rating) {
-                    return <div className="star active" key={index}></div>
-                } else {
-                    return <div className="star" key={index}></div>
-                }
+                return <div className={ index === rating ? "star active" : "star" } key={index} onClick={() => setRating(index)}></div>
             })}
         </div>
     )

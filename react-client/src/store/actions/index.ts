@@ -1,4 +1,6 @@
 import { getReviews } from '../../api';
+import { ReviewType } from '../';
+import { Dispatch } from 'redux';
 
 export const setReviewsLoading = () => {
     return {
@@ -6,14 +8,14 @@ export const setReviewsLoading = () => {
     }
 }
 
-export const setReviewsSuccess = (payload: any) => { //FIXME
+const setReviewsSuccess = (payload: {total: number, list: Array<ReviewType>, offset: number}) => {
     return {
         type: 'SET_REVIEWS_SUCCESS',
         payload
     }
 }
 
-export const fetchReviews = (payload: any, dispatcher: any) => { //FIXME
+export const fetchReviews = (payload: { limit: number, offset: number }, dispatcher: Dispatch) => {
     dispatcher(setReviewsLoading());
     getReviews(payload.limit, payload.offset).then(({ data: res }) => {
         dispatcher(setReviewsSuccess({
@@ -24,7 +26,7 @@ export const fetchReviews = (payload: any, dispatcher: any) => { //FIXME
     });
 }
 
-export const setReviewsScroll = (payload: any) => { //FIXME
+export const setReviewsScroll = (payload: {currentScroll: string | number}) => {
     return {
         type: 'SET_REVIEWS_SCROLL',
         payload

@@ -1,4 +1,5 @@
 import React from 'react';
+import { UIEvent } from 'react';
 import { ReviewsInput, Button, Review, Preloader, ReviewProps } from '../';
 
 import './styles.scss'
@@ -7,7 +8,7 @@ type ReviewsProps = {
     isLoading: Boolean,
     total: Number,
     list: Array<ReviewProps>,
-    onScroll: (event: any) => void, //FIXME
+    onScroll: (event: UIEvent) => void,
     currentScroll: Number
 }
 

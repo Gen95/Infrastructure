@@ -12,9 +12,9 @@ export type ReviewType = {
 export type StateType = {
     reviews: {
         list: Array<ReviewType>,
-        total: Number,
-        isLoading: Boolean,
-        offset: Number,
+        total: number,
+        isLoading: boolean,
+        offset: number,
         currentScroll: number
     }
 }

@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Reviews as ReviewsPattern } from '../../components/reviews';
 import { fetchReviews, setReviewsScroll } from '../../store/actions';
@@ -6,13 +6,11 @@ import { StateType as ReviewsRawProps } from '../../store';
 
 import './styles.scss'
 
-type onScroll = () => void;
-
 export const Reviews = () => {
 
     const dispatch = useDispatch();
-    const setReviewsScrollRaw = (payload: any): any => dispatch(setReviewsScroll(payload));
-    const fetchReviewsRaw = (payload: any): any => fetchReviews(payload, dispatch);
+    const setReviewsScrollRaw = (payload: {currentScroll: string | number}) => dispatch(setReviewsScroll(payload));
+    const fetchReviewsRaw = (payload: { limit: number, offset: number }) => fetchReviews(payload, dispatch);
 
     const reviews = useSelector((state: ReviewsRawProps) => state.reviews)
 
@@ -25,23 +23,18 @@ export const Reviews = () => {
     }, [])
 
     useEffect(() => () => {
-        console.log(currentScroll);
         setReviewsScrollRaw({currentScroll});
     }, [currentScroll])
 
-    const someFunction = () => {
-        console.log("currentScroll", currentScroll);
-    }
-
-    const handleScroll = (event: any) => {
-        console.log("scroll", event.target.scrollTop);
-        setCurrentScroll(event.target.scrollTop)
-        if (event.target.offsetHeight + event.target.scrollTop === event.target.scrollHeight) {
+    const handleScroll = (event: React.UIEvent<Element, UIEvent>) => {
+        const target = event.target as HTMLElement;
+        setCurrentScroll(target.scrollTop)
+        if (target.offsetHeight + target.scrollTop === target.scrollHeight) {
             callAPI(10);
         };
     }
 
-    const callAPI = (limit: Number) => {
+    const callAPI = (limit: number) => {
         const { offset, isLoading } = reviews;
         if (isLoading) return;
         fetchReviewsRaw({ limit, offset });

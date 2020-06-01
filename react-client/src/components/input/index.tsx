@@ -31,7 +31,7 @@ export const Input = (props: InputProps) => {
         classList.push('input_focus')
     };
     if (errorMessage) {
-        classList.push('input_invalid')
+        classList.push('input_invalid');
     }
     return <label className={classList.join(" ")} onFocus={handleFocus} onBlur={handleBlur} >
         <input type={type} name={name} className="input__control" placeholder={placeholder} required onInput={onInput} />

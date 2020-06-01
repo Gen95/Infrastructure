@@ -1,7 +1,11 @@
 import { initialState } from '..';
 
-export function reducer(state = initialState, action: any) { //FIXME
-    console.log('action', action);
+type ActionType = {
+    type: string;
+    payload: any // здесь можно
+}
+
+export function reducer(state = initialState, action: ActionType) {
     switch (action.type) {
         case 'SET_REVIEWS_LOADING':
             return {

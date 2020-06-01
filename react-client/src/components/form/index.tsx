@@ -27,7 +27,8 @@ export const Form = () => {
     const submitHandler = (event: React.FormEvent) => {
         event.preventDefault();
         let hasError = false;
-        inputs.forEach((input) => {
+        const newInputs = [...inputs];
+        newInputs.forEach((input) => {
             if (!input.value) {
                 input.errorMessage = "Поле незаполнено вообще";
                 hasError = true;
@@ -36,7 +37,7 @@ export const Form = () => {
                 hasError = true;
             }
         });
-        setInputs(inputs)
+        setInputs(newInputs);
 
         if (!hasError) {
             setComplete(true)
