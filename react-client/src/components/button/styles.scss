@@ -1,0 +1,28 @@
+.button {
+    background: var(--context-color-primary);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: var(--main-bg-color);
+    border: none;
+    padding: 10px 15px;
+
+    &_reviews {
+        background: var(--context-color-secondary);
+        width: fit-content;
+    }
+
+    &__hint {
+        font-size: 14px;
+        line-height: 24px;
+        margin-left: 18px;
+        display: none;
+
+        &_active {
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<div class="reviews">
+    <div class="layout reviews__layout">
+        <h1 class="h1">Отзывы <span class="reviews__count"></span></h1>
+
+        <div class="reviews__container">
+            <div class="reviews__fixed">
+                <div class="reviews__list"></div>
+                <div class="reviews__preloader"></div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews__footer">
+        <div class="layout">
+            <form class="form_reviews" noValidate>
+                {{> ./../reviews-input/reviews-input name="name" label="Остаивть отзыв" placeholder="Input_text" type="text"}}
+                {{> ./../button/button class="button button_reviews"}}
+            </form>
+        </div>
+    </div>
+</div>

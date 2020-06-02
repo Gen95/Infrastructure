@@ -1,0 +1,24 @@
+.form {
+
+    &_reviews {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+    }
+
+    &_valid {
+
+        & .input__control {
+            border-color: #27AE60;
+        }
+
+        & .input__label {
+            color: #27AE60;
+        }
+
+        & .button {
+            background-color: #27AE60;
+        }
+
+    }
+}

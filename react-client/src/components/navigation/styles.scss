@@ -1,0 +1,17 @@
+.nav {
+
+    &__item {
+        text-decoration: none;
+        color: var(--text-color);
+        margin-left: 32px;
+        
+        &:first-child {
+            margin-left: 62px;
+        }
+
+        &_active {
+            padding-bottom: 18px;
+            border-bottom: 3px solid var(--context-color-primary);
+        }
+    }
+}

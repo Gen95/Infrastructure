@@ -1,0 +1,105 @@
+.review {
+    position: relative;
+    margin: 30px 22px;
+
+    &__avatar {
+        position: absolute;
+        background: #ffffff 
+                    url(./../img/avatar.png) 
+                    no-repeat 
+                    45% 25%;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        border: 1px solid #59B9FF;
+        box-sizing: border-box; 
+    }
+
+    &__content {
+        box-sizing: border-box;
+        margin: 30px 20px;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        margin-bottom: 10px;
+    }
+
+    &__name {
+        margin: 0 16px 0 44px;
+        max-width: 235px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+    }
+
+    &__message {
+        z-index: -1;
+        margin: 0;
+        width: 418px;
+        min-height: 30px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        border: 1px solid #59B9FF;
+        box-sizing: border-box;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+        padding: 4px 8px;
+        text-indent: 40px;
+    }
+
+    &_luxury {
+        position: relative;
+        margin: 30px 22px;
+
+        .review__avatar {
+            border-color: #7000FF;
+        }
+
+        .review__message {
+            border-color: #7000FF;
+        }
+    }
+
+    &_mine {
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+        margin: 30px 22px;
+
+        .review__header {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .review__avatar {
+            border-color: #27AE60;
+        }
+
+        .review__content {
+            box-sizing: border-box;
+            margin: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .review__name {
+            margin: 0 44px 0 16px;
+        }
+
+        .review__message {
+            border-color: #27AE60;
+            text-indent: 0;
+        }
+    }
+
+}
