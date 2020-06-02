@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Тестовый проект
 
-## Available Scripts
+Проект написан для создания готовой настроенной инфрастуктуры для будущих проектов и для отработки на практике таких технологий, как `React`, `TypeScript`, `Webpack`, `Husky` и др.
 
-In the project directory, you can run:
+## Запуск
 
+Запуск происходит из двух терминалов.
+
+В первом терминале нужно зайти в папку `server` и выполнить команду:
+### `npm run server:start`
+
+Во втором терминале зайти в папку `react-client`, после чего выполнить команду:
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Проект откроется в браузере автоматически по адресу [http://localhost:3000](http://localhost:3000)
 
-### `npm test`
+## Архитектура
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+В репозитории три основные папки: `client`, в которой находится вся frontend-часть, написанная на нативном JavaScript, `react-client`, в которой находится frontend-часть написанная на React, и `server`, в которой находится backend-часть проекта.
 
-### `npm run build`
+* client
+    * src
+        * api (получение данных с backend)
+        * components (блоки для шаблонизации)
+        * img (изображения для оформления)
+        * pages (страницы)
+        * scss (глобальные стили и точка входа для стилей компонентов)
+        * utils (общая функциональность)
+        * index (точка входа компонентов и изображений)
+* react-client
+    * public
+    * src
+        * api (получение данных с backend)
+        * components (глупые компоненты)
+        * containers (компоненты, основанные на хуках)
+        * img (изображения для оформления)
+        * pages (страницы)
+        * store
+            * actions
+            * reducer
+            * index (стор, начальный стейт)
+        * styles (глобальные стили и переменные)
+* server
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Инструменты
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Для сборки использовались `gulp` и `webpack`
+- Для шаблонизации был выбран `handlebars`
+- `sass` (переменные и вложенности) упростил работу по БЭМ
+- Стили каждого отдельного компонента находятся рядом с ним самим в одной папке. Все экспорты собираются в единую точку входа своего уровня в проекте
+- Добавлен `ESLint`
+- Также были использованы `Husky` и `Lint-staged` для автоматического линтинга индексированных файлов перед коммитом, но на данном этапе они не используются
+- Запрос на backend выполняется с помощью `axios`
+- Для реализации `react-client` был установлен `create-react-app`
+- Управление состояниями производится с помощью `Redux`
+- `React`-компоненты используют `хуки`, чтобы был минимум отличий "умных" компонентов от "глупых" в написании и во избежание лишних обёрток над компонентами
+- Код в `react-client` типизирован с помощью `TypeScript`
